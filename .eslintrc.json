@@ -17,6 +17,7 @@
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:react/jsx-runtime" //Добавил настройку, чтобы Storybook не выводил ошибку
+        //"plugin:react/tsx-runtime" //Добавил настройку, чтобы Storybook не выводил ошибку
     ],
     "overrides": [],
     "parser": "@typescript-eslint/parser",

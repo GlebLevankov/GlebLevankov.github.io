@@ -1,14 +1,20 @@
-import React, { FC } from 'react';
-import classNames from './Logo.css';
-import clsx from 'clsx';
-import logo from '../assets/logo.png';
+import React from 'react';
 
-const Logo: FC = () => {
+const logo = require('../assets/logo.png');
+
+interface LogoProps {
+  backgroundColor?: string;
+  size?: 'small' | 'medium' | 'large';
+  label: string;
+  onClick?: () => void;
+}
+
+export function Logo({ label, ...props }: LogoProps) {
   return (
-    <div className={clsx(classNames.logo)}>
-      <img src={logo} />
+    <div {...props}>
+      <img src={logo} alt={label} />
     </div>
   );
-};
+}
 
 export default Logo;
