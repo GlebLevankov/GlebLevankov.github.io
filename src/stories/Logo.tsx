@@ -1,5 +1,5 @@
 import React from 'react';
-import './logo.css';
+import './header.css';
 
 const logo = require('../assets/logo.png');
 
@@ -9,7 +9,7 @@ interface LogoProps {
 
 export function Logo({ label }: LogoProps) {
   return (
-    <div className="logo">
+    <div className="storybook-header">
       <img src={logo} alt={label} />
     </div>
   );
