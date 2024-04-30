@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import classNames from './Logo.modules.css';
+import classNames from './Logo.css';
 import clsx from 'clsx';
 import logo from '../assets/logo.png';
 
