@@ -18,7 +18,12 @@ export const round = (value: number, accuracy = 2): number => {
 const transformRegexp =
   /(matrix\(-?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, )(-?\d+(\.\d+)?), (-?\d+(\.\d+)?)\)/;
 
-export const getTransformFromCss = (transformCssString: string): { x: number; y: number } => {
+type CssType = {
+  x: number;
+  y: number;
+};
+
+export const getTransformFromCss = (transformCssString: string): CssType => {
   const data = transformCssString.match(transformRegexp);
   if (!data) return { x: 0, y: 0 };
   return {
@@ -63,7 +68,14 @@ export const getNumberedArray = (arr: number[]): { value: number; number: number
 export const toStringArray = (arr: { value: number; number: number }[]): string[] =>
   arr.map(({ value, number }) => `${value}_${number}`);
 
-export const transformCustomers = (customers: { id: number; name: string; age: number; isSubscribed: boolean }[]) => {
+type CustomersType = {
+  id: number;
+  name: string;
+  age: number;
+  isSubscribed: boolean;
+};
+
+export const transformCustomers = (customers: CustomersType[]) => {
   return customers.reduce(
     (
       acc: { [id: number]: { name: string; age: number; isSubscribed: boolean } },
